@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stability Checker</title>
+<meta name="description" content="Check which Canadian travel medical policies a Quebec snowbird still qualifies for after a medication change. Every answer links to the policy wording.">
+<link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  /* Palette and type follow the We The Flywheel hackathon page (purple #7C3AED, Dosis headings, square buttons). */
+  :root { --bg:#fff; --text:#1f1d2b; --muted:#57606a; --brand:#7c3aed; --brand-dark:#6d28d9; --brand-soft:#ede9fe; --ok:#1a7f37; --no:#b42318; --border:#1f1d2b; --line:#d8d4e6; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14121c; --text:#f2f0f8; --muted:#b4aec6; --brand:#a78bfa; --brand-dark:#c4b5fd; --brand-soft:#2a2140; --ok:#3fb950; --no:#f47067; --border:#f2f0f8; --line:#3a3450; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:18px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  h1, h2, .summary, .stat b { font-family: Dosis, "Helvetica Neue", Arial, sans-serif; }
+  .band { background:#7c3aed; color:#fff; }
+  .band .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; padding-top:12px; padding-bottom:12px; }
+  .band img { height:36px; width:auto; }
+  .band small { opacity:.9; }
+  .wrap { max-width: 820px; margin: 0 auto; padding-left:16px; padding-right:16px; }
+  header.hero { display:flex; align-items:center; gap:16px; padding-top:28px; }
+  header.hero img { width:96px; height:96px; flex:none; }
+  h1 { font-size: 2.2rem; line-height:1.1; margin:0; font-weight:800; }
+  h2 { font-size: 1.5rem; margin: 40px 0 12px; font-weight:800; }
+  .sub { color: var(--muted); margin: 6px 0 0; }
+  .finding { background: var(--brand-soft); border-left: 6px solid var(--brand); padding: 16px 20px; margin: 28px 0 0; }
+  .stats { display:grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-top: 12px; }
+  .stat { border:2px solid var(--border); padding: 12px; }
+  .stat b { display:block; font-size: 2rem; line-height:1.1; color: var(--brand-dark); }
+  .note { border:2px solid var(--border); padding: 12px 16px; margin: 24px 0; }
+  form { display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px; }
+  label { display:flex; flex-direction:column; gap:4px; font-weight:600; }
+  label span { font-weight:400; color: var(--muted); font-size: .85rem; }
+  input, select { min-height:44px; font: inherit; padding: 6px 10px; border:2px solid var(--border); border-radius:0; background: var(--bg); color: var(--text); }
+  input:focus, select:focus, a:focus { outline: 3px solid var(--brand); outline-offset: 2px; }
+  .summary { font-size: 1.6rem; font-weight: 800; margin: 28px 0 8px; }
+  ul { list-style:none; padding:0; margin:0; display:grid; gap:8px; }
+  li { border:1px solid var(--line); padding: 12px 16px; display:grid; grid-template-columns: auto 1fr; gap: 4px 12px; }
+  .pill { font-weight:700; font-size:.8rem; padding:2px 10px; color:#fff; align-self:start; }
+  .open { background: var(--ok); } .closed { background: var(--no); }
+  .why { grid-column: 2; color: var(--muted); font-size: .9rem; }
+  table { width:100%; border-collapse: collapse; font-size: .95rem; }
+  th, td { border-bottom:1px solid var(--line); padding: 6px 8px; text-align:right; }
+  th:first-child, td:first-child { text-align:left; }
+  th { background: var(--brand-soft); }
+  td.low { color: var(--no); font-weight:700; }
+  a { color: var(--brand-dark); }
+  footer { margin: 40px 0 32px; color: var(--muted); font-size: .85rem; }
+</style>
+</head>
+<body>
+<div class="band">
+  <div class="wrap">
+    <a href="https://wetheflywheel.com/en/hackathon/"><img src="https://wetheflywheel.com/apply/assets/wtf-hackathon-logo-white.png" alt="We The Flywheel – Find the Gap hackathon"></a>
+    <small>Concept submitted to Find the Gap 2026 · Not endorsed by We The Flywheel</small>
+  </div>
+</div>
+<main class="wrap">
+  <header class="hero">
+    <img src="assets/mascot.svg" alt="Stella the snowbird holding a checklist">
+    <div>
+      <h1>Stability Checker</h1>
+      <p class="sub">My medication changed. Which travel policies still cover me this winter? · Mon médicament a changé : quelles polices me couvrent encore cet hiver?</p>
+    </div>
+  </header>
+
+  <section class="finding" aria-labelledby="gap">
+    <strong id="gap">The gap, measured · L'écart, mesuré</strong>
+    <p style="margin:4px 0 0">Across 10 public policy wordings, a 72-year-old whose dose changed between day 7 and day 89 qualifies for <strong>1 plan out of 10</strong>. At day 90 it is 6. I found no comparison site that shows this side by side.</p>
+    <div class="stats">
+      <div class="stat"><b>1 / 10</b>plans open, days 7–89</div>
+      <div class="stat"><b>6 / 10</b>plans open at day 90</div>
+      <div class="stat"><b>−26 %</b>Quebec Q1 trips to the US, 2026 vs 2025 (StatCan 24-10-0071)</div>
+      <div class="stat"><b>$300</b>RAMQ paid on a $25,000 US ICU bill (RAMQ example)</div>
+    </div>
+  </section>
+
+  <h2>Check your case · Vérifiez votre cas</h2>
+  <p class="note"><strong>Information, not advice · Information, pas un conseil.</strong> Each result links to the policy wording it comes from. Read it and confirm with a licensed advisor before you buy.</p>
+
+  <form id="f">
+    <label>Days since the last medication change <span>Jours depuis le dernier changement</span>
+      <input id="days" type="number" min="0" max="3650" value="60" required></label>
+    <label>Age <span>Âge</span>
+      <input id="age" type="number" min="0" max="120" value="72" required></label>
+    <label>Condition <span>Condition</span>
+      <select id="condition"><option value="other">Other / Autre</option><option value="heart">Heart / Cœur</option><option value="lung">Lung / Poumons</option><option value="diabetes">Diabetes / Diabète</option></select></label>
+    <label>Kind of change <span>Type de changement</span>
+      <select id="change"><option value="dose">Dose changed / Dose modifiée</option><option value="new_drug">New drug / Nouveau médicament</option><option value="cholesterol_medication">Cholesterol drug / Cholestérol</option><option value="brand_to_generic">Brand to generic / Générique</option><option value="routine_insulin_or_coumadin">Routine insulin or Coumadin</option></select></label>
+  </form>
+
+  <p class="summary" id="summary" aria-live="polite">Loading…</p>
+  <ul id="results"></ul>
+
+  <h2>Benchmark: plans open by days since the change</h2>
+  <p class="sub">Condition "other", dose change. Generated by <code>benchmarks/coverage_matrix.py</code> from the same data file.</p>
+  <div style="overflow-x:auto"><table id="matrix" aria-label="Plans open by days and age"></table></div>
+
+  <footer>
+    Data: <a href="https://github.com/SeCuReDmE-main-dev/stability-checker/blob/main/data/clauses.json">data/clauses.json</a> ·
+    Code: <a href="https://github.com/SeCuReDmE-main-dev/stability-checker">stability-checker</a> (Apache-2.0) ·
+    The We The Flywheel logo belongs to We The Flywheel and is shown only to name the hackathon.
+  </footer>
+</main>
+<script>
+// Same rules as src/stability_checker/checker.py.
+const RAW = 'https://raw.githubusercontent.com/SeCuReDmE-main-dev/stability-checker/main/data/clauses.json';
+let plans = [];
+function requiredDays(plan, age, condition) {
+  if (plan.condition_overrides && condition in plan.condition_overrides) return plan.condition_overrides[condition];
+  const rule = plan.rules.find(r => r.min_age <= age && age <= r.max_age);
+  return rule ? rule.days : null;
+}
+function passes(plan, days, age, condition, change) {
+  if ((plan.ignored_changes || []).includes(change)) return true;
+  const needed = requiredDays(plan, age, condition);
+  return needed !== null && days >= needed;
+}
+function render() {
+  const days = Number(document.getElementById('days').value);
+  const age = Number(document.getElementById('age').value);
+  const condition = document.getElementById('condition').value;
+  const change = document.getElementById('change').value;
+  const list = document.getElementById('results');
+  list.textContent = '';
+  let open = 0;
+  for (const plan of plans) {
+    const needed = requiredDays(plan, age, condition);
+    const ignored = (plan.ignored_changes || []).includes(change);
+    const ok = passes(plan, days, age, condition, change);
+    if (ok) open++;
+    const li = document.createElement('li');
+    const pill = document.createElement('span');
+    pill.className = 'pill ' + (ok ? 'open' : 'closed');
+    pill.textContent = ok ? 'OPEN' : 'CLOSED';
+    const title = document.createElement('strong');
+    title.textContent = plan.insurer + ' · ' + plan.plan;
+    const why = document.createElement('span');
+    why.className = 'why';
+    why.textContent = (ignored ? 'This wording does not count this kind of change. ' : needed === null ? 'No rule for this age. ' : `Needs ${needed} days; you have ${days}. `) + plan.summary + ' ';
+    const a = document.createElement('a');
+    a.href = plan.source; a.textContent = 'Source'; a.rel = 'noopener';
+    why.appendChild(a);
+    li.append(pill, title, why);
+    list.appendChild(li);
+  }
+  document.getElementById('summary').textContent = `${open} of ${plans.length} plans open · ${open} plans sur ${plans.length} accessibles`;
+}
+function matrix() {
+  const daysList = [0, 7, 30, 60, 89, 90, 182, 365], ages = [54, 65, 72, 80];
+  const t = document.getElementById('matrix');
+  const head = t.insertRow();
+  ['Days', ...ages.map(a => 'Age ' + a)].forEach(h => { const th = document.createElement('th'); th.textContent = h; head.appendChild(th); });
+  for (const d of daysList) {
+    const row = t.insertRow();
+    row.insertCell().textContent = d;
+    for (const a of ages) {
+      const n = plans.filter(p => passes(p, d, a, 'other', 'dose')).length;
+      const c = row.insertCell(); c.textContent = `${n} / ${plans.length}`;
+      if (n <= 1) c.className = 'low';
+    }
+  }
+}
+// Shareable case: ?days=60&age=72&condition=other&change=dose
+(function applyQuery() {
+  const q = new URLSearchParams(location.search);
+  for (const k of ['days', 'age', 'condition', 'change']) {
+    const el = document.getElementById(k);
+    if (!q.has(k)) continue;
+    const v = q.get(k);
+    if (el.tagName === 'SELECT' ? [...el.options].some(o => o.value === v) : /^\d{1,4}$/.test(v)) el.value = v;
+  }
+})();
+function load(url) { return fetch(url).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }); }
+load('../data/clauses.json').catch(() => load(RAW))
+  .then(d => { plans = d.plans; render(); matrix(); })
+  .catch(() => { document.getElementById('summary').textContent = 'Could not load data/clauses.json'; });
+document.getElementById('f').addEventListener('input', render);
+</script>
+</body>
+</html>

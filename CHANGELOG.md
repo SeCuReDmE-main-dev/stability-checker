@@ -2,6 +2,14 @@
 
 All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-11-12
+
+### Added
+- `docs/index.html`: bilingual web checker (GitHub Pages), same rules as the Python engine; shareable cases through the URL (`?days=60&age=72`); benchmark table computed in the page.
+- `docs/evidence.md` and `docs/llms.txt`: one-page evidence sheet, each claim tied to a file or public source.
+- `DESIGN.md`, `assets/logo.svg`, `assets/mascot.svg` (Stella the snowbird).
+- Parity check: the page's rules give the same 40 results as `data/coverage_matrix.csv`.
+
 ## [0.2.0] - 2026-11-12
 
 ### Added

@@ -1,0 +1,18 @@
+# stability-checker
+
+> Checks which Canadian travel medical policies a Quebec traveller still qualifies for after a medication change, using stability-period clauses read from public policy wordings. Every answer links to its source clause. Information, not advice.
+
+## Read first
+
+- [Evidence sheet](https://securedme-main-dev.github.io/stability-checker/evidence.md): demand, measured gap, product, money, plan, limits, each with a source
+- [Live example: age 72, dose changed 60 days ago](https://securedme-main-dev.github.io/stability-checker/?days=60&age=72&condition=other&change=dose): 1 of 10 plans open
+
+## Data
+
+- [data/clauses.json](https://raw.githubusercontent.com/SeCuReDmE-main-dev/stability-checker/main/data/clauses.json): 10 plan rules with insurer, plan, ages, days, source URL and section
+- [data/coverage_matrix.csv](https://raw.githubusercontent.com/SeCuReDmE-main-dev/stability-checker/main/data/coverage_matrix.csv): plans open by days since change, age and condition
+- [data/market_quebec_q1.csv](https://raw.githubusercontent.com/SeCuReDmE-main-dev/stability-checker/main/data/market_quebec_q1.csv): Statistics Canada Table 24-10-0071, Quebec residents, Q1
+
+## Code
+
+- [Repository](https://github.com/SeCuReDmE-main-dev/stability-checker): Python engine, CLI, tests, CI, Apache-2.0

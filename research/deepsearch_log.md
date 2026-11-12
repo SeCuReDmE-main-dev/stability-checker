@@ -23,3 +23,8 @@ Research for this repository was done inside timed 45-minute windows (We The Fly
 | 2026-11-12 | Medipac 2026-2027 policy text | 90 days; cholesterol change ignored |
 
 Search method: parallel web searches in English and French, Google autocomplete for "travel insurance stability period", and a test of who publishes the first results (mostly insurers and brokers). See `sources.md`.
+
+## Entry 8 window, interface step
+
+- Read the We The Flywheel hackathon page branding (colour #7C3AED, Dosis headings, logo URL) to match the interface.
+- Checked the page's JavaScript rules against `data/coverage_matrix.csv`: 40 of 40 rows match.

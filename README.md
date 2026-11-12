@@ -9,6 +9,10 @@
 
 > **Information, not advice.** This tool paraphrases public travel insurance wordings. Read the full wording at each source link and confirm with a licensed advisor before you buy.
 
+<p align="center"><img src="assets/mascot.svg" width="96" alt="Stella the snowbird"></p>
+
+**Try it:** [web checker, age 72, dose changed 60 days ago](https://securedme-main-dev.github.io/stability-checker/?days=60&age=72&condition=other&change=dose) · [evidence sheet](docs/evidence.md)
+
 ## English
 
 **The question:** *"My medication changed 60 days ago. Which travel policies still cover me this winter?"*
