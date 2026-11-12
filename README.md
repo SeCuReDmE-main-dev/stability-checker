@@ -3,7 +3,7 @@
 [![CI](https://github.com/SeCuReDmE-main-dev/stability-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/SeCuReDmE-main-dev/stability-checker/actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
-![Tests: 10 passing](https://img.shields.io/badge/tests-10%20passing-brightgreen)
+![Tests: 16 passing](https://img.shields.io/badge/tests-16%20passing-brightgreen)
 [![Concept submitted to We The Flywheel – Find the Gap 2026](https://img.shields.io/badge/concept-submitted%20to%20We%20The%20Flywheel%20%E2%80%93%20Find%20the%20Gap%202026-6f42c1)](NOTICE)
 ![Built with AI agents](https://img.shields.io/badge/built%20with-AI%20agents-black)
 
