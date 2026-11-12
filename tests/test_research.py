@@ -47,6 +47,12 @@ class RubricSimulation(unittest.TestCase):
             n = sum(c.key in s["criteria"] for s in index["sources"])
             self.assertGreaterEqual(n, 2, c.key)
             
+    def test_every_source_has_reviewed_topic_tags(self):
+        index = json.loads((ROOT / "data" / "sources_index.json").read_text(encoding="utf-8"))
+        for s in index["sources"]:
+            self.assertTrue(3 <= len(s["gemini_tags"]) <= 5, s["url"])
+            self.assertTrue(all(t == t.lower() and " " not in t for t in s["gemini_tags"]), s["url"])
+
     def test_index_urls_are_https_and_unique(self):
         index = json.loads((ROOT / "data" / "sources_index.json").read_text(encoding="utf-8"))
         urls = [s["url"] for s in index["sources"]]
