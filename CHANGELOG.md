@@ -5,6 +5,10 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 ## [0.4.0] - 2026-11-12
 
 ### Added
+- `research simulate`: rubric coverage benchmark (`data/rubric_coverage.csv`), not a score prediction. First run 69.9 of 85 measurable points; after filling the weak sections, 83.3.
+- `data/sources_index.json`: 19 public sources tagged by criterion and type (government, policy wording, broker explainer, forum, partner terms).
+- Hardening tests: data schema, age bands, plausible day counts, known conditions and changes, waiting longer never closes a plan, input validation, coverage matrix vs engine (35 tests).
+- Second search, in English and French: the top explainers (Snowbird Advisor, Mediquote, CAA-Québec, Protecto, TuGo blog) all say the period "varies"; none lists it insurer by insurer.
 - The web checker is named StellaCheck, after its mascot; new logo drawn from Stella's head.
 - Stella and the logo redrawn in the We The Flywheel palette.
 - Web checker: "days until you leave" field, "opens in N more days" on each closed plan, and Stella the snowbird telling you how many plans open if your treatment stays the same a little longer.

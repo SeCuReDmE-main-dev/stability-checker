@@ -1,0 +1,165 @@
+{
+  "about": "Every public source used in docs/evidence.md, tagged by Find the Gap criterion and source type. Checked 2026-11-12.",
+  "sources": [
+    {
+      "url": "https://www150.statcan.gc.ca/t1/tbl1/en/tv.action?pid=2410007101",
+      "type": "government",
+      "criteria": [
+        "demand"
+      ],
+      "fact": "Quebec residents' Q1 trips to the US fell 26.16 % in 2026"
+    },
+    {
+      "url": "https://www.ramq.gouv.qc.ca/fr/citoyens/absence-quebec/connaitre-services-couverts-hors-quebec",
+      "type": "government",
+      "criteria": [
+        "demand",
+        "gap"
+      ],
+      "fact": "RAMQ hospital cap of 100 dollars a day; 25,000 dollars billed, 300 reimbursed"
+    },
+    {
+      "url": "https://www.facebook.com/canadatousa/posts/a-minor-change-to-your-prescription-could-leave-you-completely-unprotected-this-/1402369158554314/",
+      "type": "social",
+      "criteria": [
+        "demand"
+      ],
+      "fact": "Public post warning that a minor prescription change can leave a traveller unprotected"
+    },
+    {
+      "url": "https://www.reddit.com/r/PersonalFinanceCanada/comments/uve7f2/best_travel_insurance_for_snowbirds/",
+      "type": "forum",
+      "criteria": [
+        "demand"
+      ],
+      "fact": "Snowbirds asking which travel insurance to buy"
+    },
+    {
+      "url": "https://www.snowbirdadvisor.ca/snowbirds-guide-understanding-travel-medical-insurance-stability-periods",
+      "type": "broker_explainer",
+      "criteria": [
+        "gap"
+      ],
+      "fact": "Explains stability periods as 90, 180 or 365 days; no per-insurer comparison"
+    },
+    {
+      "url": "https://www.mediquote.ca/how-changes-in-medication-affect-your-insurance-coverage/",
+      "type": "broker_explainer",
+      "criteria": [
+        "gap"
+      ],
+      "fact": "Says any medication change can restart the stability period; no per-insurer comparison"
+    },
+    {
+      "url": "https://www.caaquebec.com/fr/conseils/preparer-un-voyage/assurance-voyage-et-etat-de-sante-des-reponses-a-vos-questions",
+      "type": "insurer_faq",
+      "criteria": [
+        "demand",
+        "gap"
+      ],
+      "fact": "FAQ: does a recent medication change cancel my coverage? Answer: not necessarily"
+    },
+    {
+      "url": "https://protecto.ca/apprendre/conditions-preexistantes-stabilite-assurance-voyage/",
+      "type": "broker_explainer",
+      "criteria": [
+        "gap"
+      ],
+      "fact": "Claim can be refused if the condition was unstable; no per-insurer comparison"
+    },
+    {
+      "url": "https://blog.tugo.com/fr/blog/comment-conditions-medicales-preexistantes-instables-affectent-reclamations/",
+      "type": "insurer_blog",
+      "criteria": [
+        "gap"
+      ],
+      "fact": "Insurer blog: unstable pre-existing conditions often lead to refused claims"
+    },
+    {
+      "url": "https://www.desjardins.com/content/dam/pdf/fr/particuliers/assurances/voyage/police-assurance.pdf",
+      "type": "policy_wording",
+      "criteria": [
+        "gap",
+        "concept"
+      ],
+      "fact": "182 days at 55+, 90 under 55"
+    },
+    {
+      "url": "https://www.medipac.com/UserFiles/files/MedipacPolicyText.pdf",
+      "type": "policy_wording",
+      "criteria": [
+        "gap",
+        "concept"
+      ],
+      "fact": "90 days; cholesterol medication change ignored"
+    },
+    {
+      "url": "https://qc.croixbleue.ca/images/docs/Qc_Policy-fr.pdf",
+      "type": "policy_wording",
+      "criteria": [
+        "gap",
+        "concept"
+      ],
+      "fact": "3 months; nitroglycerine rule for heart conditions"
+    },
+    {
+      "url": "https://www.manulife.com/content/dam/consumer-portal/documents/en/travel/single-trip-all-inclusive-policye.pdf",
+      "type": "policy_wording",
+      "criteria": [
+        "gap",
+        "concept"
+      ],
+      "fact": "Trip cancellation: 3 or 12 months"
+    },
+    {
+      "url": "https://securedme-main-dev.github.io/stability-checker/",
+      "type": "product",
+      "criteria": [
+        "concept",
+        "plan"
+      ],
+      "fact": "StellaCheck live checker"
+    },
+    {
+      "url": "https://www.squaremouth.com/about/affiliates",
+      "type": "partner_terms",
+      "criteria": [
+        "money"
+      ],
+      "fact": "Non-licensed referrers can make up to 50 dollars per sale"
+    },
+    {
+      "url": "https://lautorite.qc.ca/professionnels/cabinets-societes-et-representants-autonomes/obligations-et-formalites-administratives/paiement-de-la-remuneration",
+      "type": "regulator",
+      "criteria": [
+        "money"
+      ],
+      "fact": "AMF page on referral commissions (commission de reference)"
+    },
+    {
+      "url": "https://github.com/SeCuReDmE-main-dev/stability-checker/blob/main/.github/ISSUE_TEMPLATE/clause_update.md",
+      "type": "process",
+      "criteria": [
+        "plan"
+      ],
+      "fact": "One pull request per policy wording update"
+    },
+    {
+      "url": "https://www.securiglobe.com/fr/programme-daffiliation-assurance-voyage/",
+      "type": "partner_terms",
+      "criteria": [
+        "money",
+        "plan"
+      ],
+      "fact": "Quebec travel insurance broker with a public affiliate program"
+    },
+    {
+      "url": "https://github.com/SeCuReDmE-main-dev/stability-checker/actions",
+      "type": "product",
+      "criteria": [
+        "concept"
+      ],
+      "fact": "CI runs 35 tests and the evidence audit on every push"
+    }
+  ]
+}

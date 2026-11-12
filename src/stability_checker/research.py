@@ -102,13 +102,52 @@ def audit(markdown: str, min_links: int = 1, min_numbers: int = 2) -> list[dict]
     return rows
 
 
+def simulate(markdown: str, index: dict) -> list[dict]:
+    """Rubric coverage benchmark: how well each public criterion is backed by evidence.
+
+    This is not a prediction of a judge's score. For each criterion it combines the share of
+    targets met (3 public links in its section, 4 figures, 3 tagged sources in the index) and
+    multiplies by the criterion's published weight.
+    """
+    tagged: dict[str, int] = {}
+    for src in index.get("sources", []):
+        for c in src.get("criteria", []):
+            tagged[c] = tagged.get(c, 0) + 1
+    rows = []
+    for r in audit(markdown):
+        cover = (0.5 * min(1, r["links"] / 3) + 0.3 * min(1, r["numbers"] / 4)
+                 + 0.2 * min(1, tagged.get(r["criterion"], 0) / 3))
+        rows.append({"criterion": r["criterion"], "weight": r["weight"], "links": r["links"],
+                     "numbers": r["numbers"], "tagged_sources": tagged.get(r["criterion"], 0),
+                     "coverage": round(cover, 2), "weighted": round(cover * r["weight"], 1)})
+    return rows
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(prog="stability_checker.research", description=__doc__.splitlines()[0])
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("plan", help="print search queries per criterion")
     a = sub.add_parser("audit", help="check an evidence sheet")
     a.add_argument("file", type=Path)
+    sim = sub.add_parser("simulate", help="rubric coverage benchmark to CSV")
+    sim.add_argument("file", type=Path)
+    sim.add_argument("--index", type=Path, default=Path("data/sources_index.json"))
+    sim.add_argument("--out", type=Path, default=Path("data/rubric_coverage.csv"))
     args = ap.parse_args(argv)
+    if args.cmd == "simulate":
+        import csv
+        import json
+        rows = simulate(args.file.read_text(encoding="utf-8"),
+                        json.loads(args.index.read_text(encoding="utf-8")))
+        with args.out.open("w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=list(rows[0]))
+            w.writeheader()
+            w.writerows(rows)
+        for r in rows:
+            print(f"{r['criterion']:<8} coverage {r['coverage']:.2f}  {r['weighted']:>5} / {r['weight']}")
+        covered = sum(r["weighted"] for r in rows)
+        print(f"covered {covered:.1f} of {sum(r['weight'] for r in rows)} rubric points (opening paragraph not measured)")
+        return 0
     if args.cmd == "plan":
         for key, q in plan():
             print(f"{key}\t{q}")
