@@ -1,4 +1,6 @@
-# stability-checker
+<p align="center"><img src="assets/logo.svg" width="72" alt="StellaCheck logo"></p>
+
+# StellaCheck (stability-checker)
 
 [![CI](https://github.com/SeCuReDmE-main-dev/stability-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/SeCuReDmE-main-dev/stability-checker/actions/workflows/ci.yml)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)

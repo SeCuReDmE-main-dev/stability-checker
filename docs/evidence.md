@@ -1,4 +1,4 @@
-# Evidence sheet: Stable Enough / stability-checker
+# Evidence sheet: Stable Enough / StellaCheck
 
 One page, plain text, every claim tied to a file or a public source. Numbers come from files in this repository and can be recomputed with `python benchmarks/coverage_matrix.py` and `python benchmarks/statcan_winter_shift.py`.
 
@@ -33,7 +33,7 @@ Policy wordings read: Desjardins https://www.desjardins.com/content/dam/pdf/fr/p
 
 ## The product
 
-- Live checker: https://securedme-main-dev.github.io/stability-checker/?days=60&age=72&condition=other&change=dose
+- StellaCheck, the live checker: https://securedme-main-dev.github.io/stability-checker/?days=60&age=72&condition=other&change=dose
 - Research planner and evidence audit: `python -m stability_checker.research plan` prints 29 searches by scoring criterion; `audit docs/evidence.md` checks each criterion has public links and figures.
 - Python engine and CLI: `src/stability_checker/checker.py`, 10 tests in CI on Python 3.10 and 3.12.
 - Each answer links to the clause it comes from; the page states "information, not advice" above the result.

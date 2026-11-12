@@ -1,7 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="stability-checker logo">
-  <title>stability-checker</title>
-  <rect x="4" y="4" width="56" height="56" fill="#7c3aed"/>
-  <path d="M14 40 L24 30 L32 36 L44 22 L50 26" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="50" cy="26" r="4" fill="#fbbf24"/>
-  <rect x="14" y="44" width="36" height="4" fill="#ede9fe"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="StellaCheck logo">
+  <title>StellaCheck</title>
+  <rect width="64" height="64" fill="#7c3aed"/>
+  <!-- Stella's head -->
+  <circle cx="30" cy="36" r="19" fill="#ede9fe"/>
+  <path d="M10 26 Q30 8 50 26 Z" fill="#fbbf24"/>
+  <rect x="6" y="25" width="48" height="4" fill="#fcd34d"/>
+  <circle cx="24" cy="38" r="4.5" fill="#1f1d2b"/>
+  <circle cx="36" cy="38" r="4.5" fill="#1f1d2b"/>
+  <circle cx="25.5" cy="36.5" r="1.4" fill="#fff"/>
+  <circle cx="37.5" cy="36.5" r="1.4" fill="#fff"/>
+  <path d="M27 44 L33 44 L30 49 Z" fill="#fbbf24"/>
+  <!-- check badge -->
+  <circle cx="50" cy="50" r="11" fill="#1a7f37" stroke="#7c3aed" stroke-width="3"/>
+  <path d="M44.5 50 L48.5 54 L55.5 46" fill="none" stroke="#fff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

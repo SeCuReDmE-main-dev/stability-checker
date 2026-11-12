@@ -1,4 +1,4 @@
-# stability-checker
+# StellaCheck (repository: stability-checker)
 
 > Checks which Canadian travel medical policies a Quebec traveller still qualifies for after a medication change, using stability-period clauses read from public policy wordings. Every answer links to its source clause. Information, not advice.
 

@@ -5,6 +5,7 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 ## [0.4.0] - 2026-11-12
 
 ### Added
+- The web checker is named StellaCheck, after its mascot; new logo drawn from Stella's head.
 - Stella and the logo redrawn in the We The Flywheel palette.
 - Web checker: "days until you leave" field, "opens in N more days" on each closed plan, and Stella the snowbird telling you how many plans open if your treatment stays the same a little longer.
 - `stability_checker.research`: `plan` prints 29 searches grouped by the Find the Gap scoring criteria (demand, gap, concept, money, plan); `audit` checks that each criterion in an evidence sheet has public links and figures.
