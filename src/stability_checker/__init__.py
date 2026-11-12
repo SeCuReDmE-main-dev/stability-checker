@@ -1,5 +1,5 @@
 """stability-checker: which travel insurance stability clauses does a traveller meet?"""
-from .checker import CHANGES, CONDITIONS, Result, check, load_plans
+from .checker import CHANGES, CONDITIONS, Result, check, coverage, load_plans
 
-__all__ = ["CHANGES", "CONDITIONS", "Result", "check", "load_plans"]
-__version__ = "0.1.0"
+__all__ = ["CHANGES", "CONDITIONS", "Result", "check", "coverage", "load_plans"]
+__version__ = "0.2.0"

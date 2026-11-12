@@ -1,0 +1,109 @@
+quarter,destination,measure,thousands,quality_flag
+2018-01,Caribbean,Nights,3372.0,B
+2018-01,Caribbean,Visits,423.0,B
+2018-01,Europe,Nights,1592.0,C
+2018-01,Europe,Visits,122.0,C
+2018-01,North America,Nights,1514.0,C
+2018-01,North America,Visits,144.0,B
+2018-01,Overseas,Nights,9520.0,B
+2018-01,Overseas,Visits,857.0,A
+2018-01,South and Central America,Nights,1226.0,D
+2018-01,South and Central America,Visits,79.0,C
+2018-01,United States of America,Nights,5582.0,B
+2018-01,United States of America,Visits,658.0,B
+2019-01,Caribbean,Nights,4137.0,D
+2019-01,Caribbean,Visits,376.0,B
+2019-01,Europe,Nights,1316.0,C
+2019-01,Europe,Visits,98.0,C
+2019-01,North America,Nights,1971.0,C
+2019-01,North America,Visits,177.0,B
+2019-01,Overseas,Nights,11564.0,B
+2019-01,Overseas,Visits,902.0,A
+2019-01,South and Central America,Nights,1219.0,C
+2019-01,South and Central America,Visits,91.0,C
+2019-01,United States of America,Nights,3994.0,B
+2019-01,United States of America,Visits,585.0,B
+2020-01,Caribbean,Nights,2041.0,B
+2020-01,Caribbean,Visits,248.0,B
+2020-01,Europe,Nights,1103.0,D
+2020-01,Europe,Visits,92.0,C
+2020-01,North America,Nights,1121.0,C
+2020-01,North America,Visits,137.0,C
+2020-01,Overseas,Nights,6908.0,B
+2020-01,Overseas,Visits,638.0,B
+2020-01,South and Central America,Nights,1799.0,E
+2020-01,South and Central America,Visits,114.0,E
+2020-01,United States of America,Nights,2419.0,B
+2020-01,United States of America,Visits,366.0,B
+2021-01,Caribbean,Nights,326.0,E
+2021-01,Caribbean,Visits,15.0,E
+2021-01,Europe,Nights,817.0,E
+2021-01,Europe,Visits,40.0,E
+2021-01,North America,Nights,162.0,E
+2021-01,North America,Visits,23.0,E
+2021-01,Overseas,Nights,1680.0,E
+2021-01,Overseas,Visits,98.0,D
+2021-01,South and Central America,Nights,,..
+2021-01,South and Central America,Visits,,..
+2021-01,United States of America,Nights,718.0,E
+2021-01,United States of America,Visits,41.0,D
+2022-01,Caribbean,Nights,1033.0,D
+2022-01,Caribbean,Visits,89.0,C
+2022-01,Europe,Nights,2036.0,D
+2022-01,Europe,Visits,94.0,D
+2022-01,North America,Nights,1103.0,D
+2022-01,North America,Visits,94.0,C
+2022-01,Overseas,Nights,6247.0,C
+2022-01,Overseas,Visits,352.0,B
+2022-01,South and Central America,Nights,1289.0,E
+2022-01,South and Central America,Visits,43.0,E
+2022-01,United States of America,Nights,3120.0,C
+2022-01,United States of America,Visits,258.0,B
+2023-01,Caribbean,Nights,3341.0,B
+2023-01,Caribbean,Visits,346.0,B
+2023-01,Europe,Nights,2016.0,D
+2023-01,Europe,Visits,137.0,C
+2023-01,North America,Nights,1853.0,C
+2023-01,North America,Visits,192.0,B
+2023-01,Overseas,Nights,10326.0,B
+2023-01,Overseas,Visits,804.0,A
+2023-01,South and Central America,Nights,1565.0,C
+2023-01,South and Central America,Visits,87.0,C
+2023-01,United States of America,Nights,4995.0,B
+2023-01,United States of America,Visits,633.0,B
+2024-01,Caribbean,Nights,3722.0,B
+2024-01,Caribbean,Visits,450.0,B
+2024-01,Europe,Nights,1067.0,C
+2024-01,Europe,Visits,94.0,C
+2024-01,North America,Nights,3160.0,C
+2024-01,North America,Visits,248.0,C
+2024-01,Overseas,Nights,12894.0,B
+2024-01,Overseas,Visits,998.0,A
+2024-01,South and Central America,Nights,2488.0,D
+2024-01,South and Central America,Visits,116.0,C
+2024-01,United States of America,Nights,4386.0,B
+2024-01,United States of America,Visits,598.0,B
+2025-01,Caribbean,Nights,5246.0,D
+2025-01,Caribbean,Visits,430.0,B
+2025-01,Europe,Nights,2135.0,C
+2025-01,Europe,Visits,186.0,C
+2025-01,North America,Nights,2157.0,C
+2025-01,North America,Visits,236.0,C
+2025-01,Overseas,Nights,15598.0,D
+2025-01,Overseas,Visits,1092.0,B
+2025-01,South and Central America,Nights,1234.0,D
+2025-01,South and Central America,Visits,105.0,D
+2025-01,United States of America,Nights,4885.0,B
+2025-01,United States of America,Visits,539.0,B
+2026-01,Caribbean,Nights,3328.0,B
+2026-01,Caribbean,Visits,354.0,B
+2026-01,Europe,Nights,3125.0,C
+2026-01,Europe,Visits,202.0,C
+2026-01,North America,Nights,2632.0,C
+2026-01,North America,Visits,208.0,C
+2026-01,Overseas,Nights,16357.0,B
+2026-01,Overseas,Visits,1098.0,A
+2026-01,South and Central America,Nights,2455.0,D
+2026-01,South and Central America,Visits,153.0,C
+2026-01,United States of America,Nights,3173.0,E
+2026-01,United States of America,Visits,398.0,B

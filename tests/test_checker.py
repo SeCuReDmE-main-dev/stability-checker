@@ -4,7 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from stability_checker import check, load_plans  # noqa: E402
+from stability_checker import check, coverage, load_plans  # noqa: E402
 
 
 def by_id(results):
@@ -53,6 +53,16 @@ class IgnoredChanges(unittest.TestCase):
         r = by_id(check(10, 70, change="cholesterol_medication"))
         self.assertTrue(r["medipac-2026-2027"].passes)
         self.assertFalse(r["tugo-gold"].passes)
+
+
+class Coverage(unittest.TestCase):
+    def test_more_plans_open_up_as_time_passes(self):
+        counts = [row["plans_passing"] for row in coverage([0, 30, 90, 182, 365], 72)]
+        self.assertEqual(counts, sorted(counts))
+        self.assertEqual(counts[-1], len(load_plans()))
+
+    def test_day_zero_leaves_no_plan(self):
+        self.assertEqual(coverage([0], 72)[0]["plans_passing"], 0)
 
 
 class InputValidation(unittest.TestCase):

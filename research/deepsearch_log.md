@@ -9,6 +9,8 @@ Research for this repository was done inside timed 45-minute windows (We The Fly
 | 05:59 | Source check, 7 links (5 wordings, 1 broker page, StatCan table) | 6 x HTTP 200; Manulife returns 403 to scripts (read in a browser) |
 | 05:59 | Re-ran `benchmarks/statcan_winter_shift.py` on Table 24-10-0071 | Same figures as earlier runs: US -26.16%, overseas +0.55% |
 | 06:00-06:15 | Encoded 10 plan rules in `data/clauses.json`, wrote 8 tests | 8/8 passing |
+| 06:20 | Coverage benchmark (`coverage_matrix.py`) | Days 7 to 89 after a dose change: 1 plan open out of 10 |
+| 06:20 | Downloaded Table 24-10-0071 again, built `market_quebec_q1.csv` | 108 rows, 2018 to 2026, with quality flags |
 
 ## Earlier windows (sources first read)
 

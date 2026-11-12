@@ -72,6 +72,20 @@ def check(days_since_change: int, age: int, condition: str = "other",
     return results
 
 
+def coverage(days_list: list[int], age: int, condition: str = "other",
+             change: str = "dose", plans: list[dict] | None = None) -> list[dict]:
+    """For each day count, how many plans a traveller still qualifies for."""
+    plans = plans if plans is not None else load_plans()
+    rows = []
+    for days in days_list:
+        results = check(days, age, condition, change, plans)
+        passing = [r.plan_id for r in results if r.passes]
+        rows.append({"days_since_change": days, "age": age, "condition": condition,
+                     "plans_passing": len(passing), "plans_total": len(results),
+                     "passing_ids": ";".join(passing)})
+    return rows
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--days", type=int, required=True, help="days since the last medication change")

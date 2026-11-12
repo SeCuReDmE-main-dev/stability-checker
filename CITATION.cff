@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this data or software, please cite it as below."
 title: "stability-checker: travel insurance stability clauses for Quebec snowbirds"
-version: 0.1.0
+version: 0.2.0
 date-released: 2026-11-12
 license: Apache-2.0
 repository-code: "https://github.com/SeCuReDmE-main-dev/stability-checker"
