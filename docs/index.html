@@ -47,6 +47,11 @@
   th { background: var(--brand-soft); }
   td.low { color: var(--no); font-weight:700; }
   a { color: var(--brand-dark); }
+  .stella { display:flex; align-items:flex-start; gap:12px; margin: 24px 0 8px; }
+  .stella img { width:72px; height:72px; flex:none; }
+  .bubble { position:relative; background: var(--brand); color:#fff; padding: 12px 16px; font-weight:600; }
+  .bubble:before { content:""; position:absolute; left:-12px; top:18px; border:6px solid transparent; border-right-color: var(--brand); border-width:6px 12px 6px 0; }
+  .soon { grid-column: 2; font-size:.85rem; font-weight:700; color: var(--brand-dark); }
   footer { margin: 40px 0 32px; color: var(--muted); font-size: .85rem; }
 </style>
 </head>
@@ -85,6 +90,8 @@
       <input id="days" type="number" min="0" max="3650" value="60" required></label>
     <label>Age <span>Âge</span>
       <input id="age" type="number" min="0" max="120" value="72" required></label>
+    <label>Days until you leave <span>Jours avant le départ</span>
+      <input id="leave" type="number" min="0" max="365" value="0" required></label>
     <label>Condition <span>Condition</span>
       <select id="condition"><option value="other">Other / Autre</option><option value="heart">Heart / Cœur</option><option value="lung">Lung / Poumons</option><option value="diabetes">Diabetes / Diabète</option></select></label>
     <label>Kind of change <span>Type de changement</span>
@@ -92,6 +99,7 @@
   </form>
 
   <p class="summary" id="summary" aria-live="polite">Loading…</p>
+  <div class="stella"><img src="assets/mascot.svg" alt="Stella the snowbird"><p class="bubble" id="stella" aria-live="polite"></p></div>
   <ul id="results"></ul>
 
   <h2>Benchmark: plans open by days since the change</h2>
@@ -119,7 +127,8 @@ function passes(plan, days, age, condition, change) {
   return needed !== null && days >= needed;
 }
 function render() {
-  const days = Number(document.getElementById('days').value);
+  const leave = Number(document.getElementById('leave').value) || 0;
+  const days = Number(document.getElementById('days').value) + leave;
   const age = Number(document.getElementById('age').value);
   const condition = document.getElementById('condition').value;
   const change = document.getElementById('change').value;
@@ -144,9 +153,24 @@ function render() {
     a.href = plan.source; a.textContent = 'Source'; a.rel = 'noopener';
     why.appendChild(a);
     li.append(pill, title, why);
+    if (!ok && needed !== null) {
+      const soon = document.createElement('span');
+      soon.className = 'soon';
+      soon.textContent = `Opens in ${needed - days} more days · S'ouvre dans ${needed - days} jours`;
+      li.appendChild(soon);
+    }
     list.appendChild(li);
   }
-  document.getElementById('summary').textContent = `${open} of ${plans.length} plans open · ${open} plans sur ${plans.length} accessibles`;
+  document.getElementById('summary').textContent = (leave ? 'On departure day: ' : '') + `${open} of ${plans.length} plans open · ${open} plans sur ${plans.length} accessibles`;
+  // Stella: the next threshold that opens more plans.
+  const next = plans.map(p => requiredDays(p, age, condition)).filter(n => n !== null && n > days).sort((x, y) => x - y)[0];
+  const stella = document.getElementById('stella');
+  if (next === undefined) {
+    stella.textContent = open === plans.length ? 'Every plan in this list is open to you. Read your clause anyway. · Tous les plans de la liste sont accessibles.' : 'Waiting longer will not open more plans in this list. · Attendre n'ouvre pas d'autres plans.';
+  } else {
+    const more = plans.filter(p => passes(p, next, age, condition, change)).length;
+    stella.textContent = `If your treatment stays the same ${next - days} more days, ${more} of ${plans.length} plans open. · Si votre traitement reste stable ${next - days} jours de plus, ${more} plans sur ${plans.length} s'ouvrent.`;
+  }
 }
 function matrix() {
   const daysList = [0, 7, 30, 60, 89, 90, 182, 365], ages = [54, 65, 72, 80];
@@ -166,7 +190,7 @@ function matrix() {
 // Shareable case: ?days=60&age=72&condition=other&change=dose
 (function applyQuery() {
   const q = new URLSearchParams(location.search);
-  for (const k of ['days', 'age', 'condition', 'change']) {
+  for (const k of ['days', 'leave', 'age', 'condition', 'change']) {
     const el = document.getElementById(k);
     if (!q.has(k)) continue;
     const v = q.get(k);

@@ -2,4 +2,4 @@
 from .checker import CHANGES, CONDITIONS, Result, check, coverage, load_plans
 
 __all__ = ["CHANGES", "CONDITIONS", "Result", "check", "coverage", "load_plans"]
-__version__ = "0.3.0"
+__version__ = "0.4.0"

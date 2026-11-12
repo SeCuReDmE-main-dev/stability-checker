@@ -23,3 +23,5 @@ jobs:
         run: python -c "import json; json.load(open('data/clauses.json', encoding='utf-8'))"
       - name: Run tests
         run: python -m unittest discover -s tests -v
+      - name: Audit evidence sheet
+        run: PYTHONPATH=src python -m stability_checker.research audit docs/evidence.md

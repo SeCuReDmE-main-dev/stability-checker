@@ -28,3 +28,4 @@ Search method: parallel web searches in English and French, Google autocomplete 
 
 - Read the We The Flywheel hackathon page branding (colour #7C3AED, Dosis headings, logo URL) to match the interface.
 - Checked the page's JavaScript rules against `data/coverage_matrix.csv`: 40 of 40 rows match.
+- Ran `python -m stability_checker.research audit docs/evidence.md`: demand, gap, money and plan had no public links. Searched the planner's money queries: Squaremouth affiliate page ("up to $50 per sale" for non-licensed referrers) and the AMF page on referral commissions. Added these and the policy PDFs; audit now passes on all 5 criteria.

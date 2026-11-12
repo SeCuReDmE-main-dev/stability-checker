@@ -3,7 +3,7 @@
 ## Read this first (5 lines)
 
 1. What it does: tells a traveller which stability clauses they meet, from 10 plan rules read in public wordings.
-2. Where it stands: v0.3.0, 10 tests passing, data checked on 2026-11-12.
+2. Where it stands: v0.4.0, 10 tests passing, data checked on 2026-11-12.
 3. Run it: `PYTHONPATH=src python -m stability_checker --days 60 --age 72`
 4. Trust level: every clause links to its source; nothing is advice.
 5. Next human decision: below.
