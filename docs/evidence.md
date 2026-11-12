@@ -48,13 +48,13 @@ Order of magnitude, with one stated assumption: Quebec residents made 398,000 Q1
 
 ## Operator plan
 
-Day 0 is done (engine, data, tests, page). Next: add the 20 most-sold Quebec plans to `data/clauses.json` (one pull request per wording, template: https://github.com/SeCuReDmE-main-dev/stability-checker/blob/main/.github/ISSUE_TEMPLATE/clause_update.md), then sign one referral agreement before the October renewal season.
+Day 0 is done (engine, data, tests, page). Next: add the 20 most-sold Quebec plans to `data/clauses.json` (one pull request per wording, template: https://github.com/SeCuReDmE-main-dev/stability-checker/blob/main/.github/ISSUE_TEMPLATE/clause_update.md); each result links to a referral program that already accepts new referrers (SécuriGlobe, Squaremouth), before the October renewal season.
 
 | When | Step | Measure |
 |---|---|---|
 | Weeks 1–2 | 20 most-sold Quebec plans in `data/clauses.json`, each with source and test | 20 of 20 rules sourced |
 | Week 3 | French page at assezstable.guide; the checker linked from each insurer page | 2 languages live |
-| Weeks 4–6 | Referral agreement with one Quebec broker (SécuriGlobe or Assur360 program) | 1 signed |
+| Weeks 4–6 | Each checker result links to the public referral programs of SécuriGlobe and Squaremouth | clicks and sales counted per plan |
 | Each September | Re-read every wording for the new policy year; CI audit must pass | 0 stale rules |
 
 Live product: https://securedme-main-dev.github.io/stability-checker/
