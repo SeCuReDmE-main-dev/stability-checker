@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-12",
+  "note": "Short paraphrases of public policy wordings. Always read the full wording at the source link. Information, not advice.",
+  "plans": [
+    {
+      "id": "desjardins-standard",
+      "insurer": "Desjardins",
+      "plan": "Assurance voyage (emergency care)",
+      "rules": [
+        {"min_age": 55, "max_age": 200, "days": 182},
+        {"min_age": 0, "max_age": 54, "days": 90}
+      ],
+      "condition_overrides": {},
+      "ignored_changes": ["routine_insulin_or_coumadin", "brand_to_generic"],
+      "summary": "Stable 182 days before departure at 55 or older, 90 days under 55. A change of dose, frequency or drug counts.",
+      "source": "https://www.desjardins.com/content/dam/pdf/fr/particuliers/assurances/voyage/police-assurance.pdf",
+      "section": "8. Exclusion pour un etat de sante instable"
+    },
+    {
+      "id": "desjardins-stability-3-months",
+      "insurer": "Desjardins",
+      "plan": "Assurance voyage with the 'Stabilite 3 mois' option",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 90}],
+      "condition_overrides": {},
+      "ignored_changes": ["routine_insulin_or_coumadin", "brand_to_generic"],
+      "summary": "Paid option that brings the window to 90 days for every age.",
+      "source": "https://www.desjardins.com/content/dam/pdf/fr/particuliers/assurances/voyage/police-assurance.pdf",
+      "section": "8. Exclusion pour un etat de sante instable"
+    },
+    {
+      "id": "medipac-2026-2027",
+      "insurer": "Medipac",
+      "plan": "Travel Emergency Medical 2026-2027",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 90}],
+      "condition_overrides": {},
+      "ignored_changes": ["cholesterol_medication", "brand_to_generic", "routine_insulin_or_coumadin"],
+      "summary": "Stable and controlled 90 days before the effective date or trip start. A cholesterol medication change does not count.",
+      "source": "https://www.medipac.com/UserFiles/files/MedipacPolicyText.pdf",
+      "section": "Unstable pre-existing conditions"
+    },
+    {
+      "id": "croix-bleue-quebec",
+      "insurer": "Croix Bleue du Quebec",
+      "plan": "Police d'assurance voyage",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 90}],
+      "condition_overrides": {},
+      "ignored_changes": [],
+      "summary": "Stable in the 3 months before coverage starts. Heart: excluded if nitroglycerine was used more than once in 7 days in that window.",
+      "source": "https://qc.croixbleue.ca/images/docs/Qc_Policy-fr.pdf",
+      "section": "A) Exclusions dues aux conditions medicales preexistantes"
+    },
+    {
+      "id": "tugo-gold",
+      "insurer": "TuGo",
+      "plan": "Gold",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 90}],
+      "condition_overrides": {},
+      "ignored_changes": ["brand_to_generic"],
+      "summary": "Stable 90 days before the trip. Any increase or decrease in dosage is an alteration.",
+      "source": "https://simpson-group.com/wp-content/uploads/2021/08/Quest-A-Policy-Wording-0821.pdf",
+      "section": "Exclusions, pre-existing conditions"
+    },
+    {
+      "id": "tugo-silver",
+      "insurer": "TuGo",
+      "plan": "Silver",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 180}],
+      "condition_overrides": {},
+      "ignored_changes": ["brand_to_generic"],
+      "summary": "Stable 180 days before the trip.",
+      "source": "https://simpson-group.com/wp-content/uploads/2021/08/Quest-A-Policy-Wording-0821.pdf",
+      "section": "Exclusions, pre-existing conditions"
+    },
+    {
+      "id": "tugo-bronze",
+      "insurer": "TuGo",
+      "plan": "Bronze",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 180}],
+      "condition_overrides": {"heart": 365, "lung": 365, "diabetes": 365},
+      "ignored_changes": ["brand_to_generic"],
+      "summary": "Stable 365 days for diabetes, heart and lung conditions, 180 days for the rest.",
+      "source": "https://simpson-group.com/wp-content/uploads/2021/08/Quest-A-Policy-Wording-0821.pdf",
+      "section": "Exclusions, pre-existing conditions"
+    },
+    {
+      "id": "tugo-7-day-option",
+      "insurer": "TuGo",
+      "plan": "Reduced stability period option (as listed by a broker)",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 7}],
+      "condition_overrides": {},
+      "ignored_changes": [],
+      "summary": "A broker lists a TuGo option that reduces the stability period to 7 days. Confirm in the current wording before relying on it.",
+      "source": "https://www.tninsurance.ca/travel/preexistingcondtravel.htm",
+      "section": "Broker page"
+    },
+    {
+      "id": "manulife-all-inclusive-tci-under-20k",
+      "insurer": "Manulife",
+      "plan": "All-Inclusive, trip cancellation and interruption under 20,000 dollars",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 90}],
+      "condition_overrides": {},
+      "ignored_changes": [],
+      "summary": "Trip cancellation section: stable 3 months before purchase.",
+      "source": "https://www.manulife.com/content/dam/consumer-portal/documents/en/travel/single-trip-all-inclusive-policye.pdf",
+      "section": "Trip cancellation and interruption, pre-existing conditions"
+    },
+    {
+      "id": "manulife-all-inclusive-tci-20k-plus",
+      "insurer": "Manulife",
+      "plan": "All-Inclusive, trip cancellation and interruption of 20,000 dollars or more",
+      "rules": [{"min_age": 0, "max_age": 200, "days": 365}],
+      "condition_overrides": {},
+      "ignored_changes": [],
+      "summary": "Trip cancellation section: stable 12 months before purchase.",
+      "source": "https://www.manulife.com/content/dam/consumer-portal/documents/en/travel/single-trip-all-inclusive-policye.pdf",
+      "section": "Trip cancellation and interruption, pre-existing conditions"
+    }
+  ]
+}

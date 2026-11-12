@@ -1,0 +1,19 @@
+stability-checker
+Copyright 2026 Jean-Sébastien Beaulieu (SecuredMe)
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Hackathon notice
+The guide concept this repository supports was submitted to the "Find the Gap"
+hackathon run by The Flywheel Corporation (We The Flywheel). Under the hackathon
+terms, rights in the submitted entry (ideas, names, text) are assigned to
+The Flywheel Corporation. This repository is not published, reviewed or endorsed
+by We The Flywheel.
+
+Third-party material
+Insurer names, plan names and policy wordings belong to their respective owners.
+data/clauses.json contains short paraphrases for reference, with a link to each
+public source. Market figures come from Statistics Canada, Table 24-10-0071-01,
+reproduced under the Statistics Canada Open Licence.
+
+This repository provides information, not insurance advice.

@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stability-checker"
+version = "0.1.0"
+description = "Which travel insurance stability clauses does a traveller meet? Information, not advice."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+authors = [{ name = "Jean-Sébastien Beaulieu" }]
+dependencies = []
+
+[project.scripts]
+stability-checker = "stability_checker.checker:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
