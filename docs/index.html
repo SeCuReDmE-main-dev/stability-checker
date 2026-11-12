@@ -166,7 +166,7 @@ function render() {
   const next = plans.map(p => requiredDays(p, age, condition)).filter(n => n !== null && n > days).sort((x, y) => x - y)[0];
   const stella = document.getElementById('stella');
   if (next === undefined) {
-    stella.textContent = open === plans.length ? 'Every plan in this list is open to you. Read your clause anyway. · Tous les plans de la liste sont accessibles.' : 'Waiting longer will not open more plans in this list. · Attendre n'ouvre pas d'autres plans.';
+    stella.textContent = open === plans.length ? 'Every plan in this list is open to you. Read your clause anyway. · Tous les plans de la liste sont accessibles.' : "Waiting longer will not open more plans in this list. · Attendre n’ouvre pas d’autres plans.";
   } else {
     const more = plans.filter(p => passes(p, next, age, condition, change)).length;
     stella.textContent = `If your treatment stays the same ${next - days} more days, ${more} of ${plans.length} plans open. · Si votre traitement reste stable ${next - days} jours de plus, ${more} plans sur ${plans.length} s'ouvrent.`;

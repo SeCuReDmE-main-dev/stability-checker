@@ -42,6 +42,12 @@ class WebParityTest(unittest.TestCase):
             py_ids = sorted(r.plan_id for r in check(*case) if r.passes)
             self.assertEqual(js_ids, py_ids, msg=f"days, age, condition, change = {case}")
 
+    def test_page_script_parses(self):
+        html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+        script = re.search(r"<script>([\s\S]*)</script>", html).group(1)
+        out = subprocess.run([NODE, "--check", "-"], input=script, capture_output=True, text=True)
+        self.assertEqual(out.returncode, 0, out.stderr)
+
     def test_page_has_no_tracking(self):
         html = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
         self.assertIsNone(re.search(r"google-analytics|gtag\(|document\.cookie|localStorage", html))

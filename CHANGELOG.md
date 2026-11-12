@@ -5,10 +5,11 @@ All notable changes follow [Keep a Changelog](https://keepachangelog.com/en/1.1.
 ## [0.4.0] - 2026-11-12
 
 ### Added
+- Stella and the logo redrawn in the We The Flywheel palette.
 - Web checker: "days until you leave" field, "opens in N more days" on each closed plan, and Stella the snowbird telling you how many plans open if your treatment stays the same a little longer.
 - `stability_checker.research`: `plan` prints 29 searches grouped by the Find the Gap scoring criteria (demand, gap, concept, money, plan); `audit` checks that each criterion in an evidence sheet has public links and figures.
 - `docs/evidence.md`: public links for every criterion (Statistics Canada, RAMQ, 4 policy wordings, Squaremouth affiliate page, AMF).
-- Tests: web page vs Python parity on 1,680 cases, no-tracking check, research planner and audit (16 tests).
+- Tests: web page vs Python parity on 1,680 cases, no-tracking check, research planner and audit, page script syntax check (17 tests).
 - CI runs the evidence audit.
 
 ## [0.3.0] - 2026-11-12
