@@ -28,7 +28,7 @@ From `data/coverage_matrix.csv` (10 plan rules read from public wordings, `data/
 | 182 | 9 of 10 |
 | 365 | 10 of 10 |
 
-Wordings also disagree on what counts as a change: Medipac ignores a cholesterol drug change; Croix Bleue excludes a heart condition if nitroglycerine was used more than once in 7 days. I found no comparison site that shows these rules side by side. A search for "stability period travel insurance medication change" (English and French, 2026-11-12) returns explainers from Snowbird Advisor, Mediquote, CAA-Québec, Protecto and TuGo's own blog: each says the period "varies" between 90 and 365 days, and none lists the rule insurer by insurer. All 17 sources, tagged by criterion: `data/sources_index.json`.
+Wordings also disagree on what counts as a change: Medipac ignores a cholesterol drug change; Croix Bleue excludes a heart condition if nitroglycerine was used more than once in 7 days. I found no comparison site that shows these rules side by side. A search for "stability period travel insurance medication change" (English and French, 2026-11-12) returns explainers from Snowbird Advisor, Mediquote, CAA-Québec, Protecto and TuGo's own blog: each says the period "varies" between 90 and 365 days, and none lists the rule insurer by insurer. All 19 sources, tagged by criterion and by topic: `data/sources_index.json`.
 
 Policy wordings read: Desjardins https://www.desjardins.com/content/dam/pdf/fr/particuliers/assurances/voyage/police-assurance.pdf · Medipac https://www.medipac.com/UserFiles/files/MedipacPolicyText.pdf · Croix Bleue https://qc.croixbleue.ca/images/docs/Qc_Policy-fr.pdf · Manulife https://www.manulife.com/content/dam/consumer-portal/documents/en/travel/single-trip-all-inclusive-policye.pdf
 
@@ -36,7 +36,7 @@ Policy wordings read: Desjardins https://www.desjardins.com/content/dam/pdf/fr/p
 
 - StellaCheck, the live checker: https://securedme-main-dev.github.io/stability-checker/?days=60&age=72&condition=other&change=dose
 - Research planner and evidence audit: `python -m stability_checker.research plan` prints 29 searches by scoring criterion; `audit docs/evidence.md` checks each criterion has public links and figures.
-- Python engine and CLI: `src/stability_checker/checker.py`; 35 tests run in CI on Python 3.10 and 3.12 (https://github.com/SeCuReDmE-main-dev/stability-checker/actions), including 1,680 cases where the web page and the Python engine must agree and a check that waiting longer never closes a plan.
+- Python engine and CLI: `src/stability_checker/checker.py`; 36 tests run in CI on Python 3.10 and 3.12 (https://github.com/SeCuReDmE-main-dev/stability-checker/actions), including 1,680 cases where the web page and the Python engine must agree and a check that waiting longer never closes a plan.
 - Code and data, Apache-2.0: https://github.com/SeCuReDmE-main-dev/stability-checker
 - Each answer links to the clause it comes from; the page states "information, not advice" above the result.
 

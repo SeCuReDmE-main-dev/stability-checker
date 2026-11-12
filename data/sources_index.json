@@ -267,7 +267,7 @@
       "criteria": [
         "concept"
       ],
-      "fact": "CI runs 35 tests and the evidence audit on every push",
+      "fact": "CI runs 36 tests and the evidence audit on every push",
       "gemini_tags": [
         "continuous-integration",
         "automated-testing",
